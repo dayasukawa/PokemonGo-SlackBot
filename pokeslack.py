@@ -869,6 +869,7 @@ transform_from_wgs_to_gcj(Location(Fort.Latitude, Fort.Longitude))
     for poke in visible:
         pokeid = str(poke.pokemon.PokemonId)
         pokename = pokemonsJSON[pokeid]
+        pokename_en = pokemonsJSON[pokeid]
         pokename_icon = pokemonsJSON_icons[pokeid]
         if args.ignore:
             if pokename.lower() in ignore or pokeid in ignore:
@@ -918,7 +919,7 @@ transform_from_wgs_to_gcj(Location(Fort.Latitude, Fort.Longitude))
                 '#{disappear_seconds}': disappear_seconds})
 
             if pokemon_icons_prefix != ':pokeball:':
-                user_icon = pokemon_icons_prefix + pokename_icon.lower() + ':'
+                user_icon = pokemon_icons_prefix + pokename_en.lower() + ':'
             else:
                 user_icon = ':pokeball:'
 
